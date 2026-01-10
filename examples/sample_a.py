@@ -1,4 +1,5 @@
 
+"""Provide core mathematical and utility functions for Python applications."""
 import math
 def calculate_average(numbers):
     """
