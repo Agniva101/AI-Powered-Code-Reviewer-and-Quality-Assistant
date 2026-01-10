@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* -------------------------------------------------------------
+   1. THEME & COLORS
+   ------------------------------------------------------------- */
+:root {
+    /* Cool blue gradients for the main accents */
+    --primary-gradient: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+    --secondary-gradient: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    
+    /* Other accents */
+    --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    
+    /* Dark Mode (Default) */
+    --dark-bg: #0f1419;
+    --darker-bg: #0a0e13;
+    --card-bg: #1a1f2e;
+    --card-hover-bg: #242938;
+    
+    /* Typography */
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    
+    /* Borders & Shadows */
+    --border-color: rgba(240, 246, 252, 0.1);
+    --border-hover: rgba(14, 165, 233, 0.5);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* Light Mode Overrides */
+@media (prefers-color-scheme: light) {
+    body, .main, [data-testid="stAppViewContainer"] {
+        --dark-bg: #f8f9fa;
+        --darker-bg: #ffffff;
+        --card-bg: #ffffff;
+        --card-hover-bg: #f1f3f5;
+        --text-primary: #1a1f2e;
+        --text-secondary: #495057;
+        --border-color: rgba(0, 0, 0, 0.15);
+        --border-hover: rgba(14, 165, 233, 0.5);
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+        --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Basic Page Setup */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-primary);
+}
+
+#MainMenu, footer { visibility: hidden; }
+
+/* -------------------------------------------------------------
+   2. INTERACTIVE COMPONENTS
+   ------------------------------------------------------------- */
+
+/* --- Buttons --- */
+.stButton > button,
+.stDownloadButton > button {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    box-shadow: var(--shadow-md) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.stButton > button *, 
+.stDownloadButton > button * {
+    color: white !important;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* --- Input Fields --- */
+.stTextInput input {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+}
+
+/* --- Dropdowns & Selectboxes --- */
+.stSelectbox div[data-baseweb="select"] {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+}
+
+.stSelectbox div[data-baseweb="select"]:hover {
+    border-color: var(--border-hover) !important;
+    box-shadow: var(--shadow-md);
+}
+
+.stSelectbox svg { fill: var(--text-secondary) !important; }
+
+/* Dropdown Menu Container */
+div[data-baseweb="popover"] {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-hover) !important;
+    box-shadow: var(--shadow-xl) !important;
+    border-radius: 12px !important;
+    padding: 6px !important;
+    overflow: hidden;
+}
+
+/* Dropdown Items */
+[role="option"] {
+    padding: 10px 14px !important;
+    margin-bottom: 2px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 42px !important;
+    transition: all 0.15s ease;
+}
+
+[role="option"] span {
+    color: var(--text-primary) !important;
+    line-height: 1.4 !important;
+}
+
+[role="option"]:hover {
+    background-color: var(--card-hover-bg) !important;
+}
+
+[role="option"]:hover span {
+    color: #0ea5e9 !important;
+}
+
+/* Selected dropdown item */
+[aria-selected="true"] {
+    background: var(--primary-gradient) !important;
+}
+
+[aria-selected="true"],
+[aria-selected="true"] *,
+[aria-selected="true"]:hover,
+[aria-selected="true"]:hover * {
+    color: white !important;
+}
+
+/* Hide dropdown scrollbars */
+div[data-baseweb="popover"] *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+}
+div[data-baseweb="popover"] * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+/* --- Tabs Navigation --- */
+div[data-baseweb="tab-list"] {
+    gap: 8px;
+    background-color: transparent;
+    border-bottom: none !important;
+    padding-bottom: 8px;
+}
+
+button[data-baseweb="tab"] {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    color: var(--text-primary) !important;
+    padding: 8px 20px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    margin-right: 4px !important;
+}
+
+button[data-baseweb="tab"]:hover {
+    background-color: var(--card-hover-bg) !important;
+    border-color: var(--border-hover) !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    background: var(--primary-gradient) !important;
+    border-color: transparent !important;
+    color: white !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] * {
+    color: white !important;
+}
+
+div[data-baseweb="tab-highlight"] {
+    display: none !important;
+}
+
+/* --- Expanders --- */
+[data-testid="stExpander"] {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--shadow-sm) !important;
+    margin-bottom: 12px !important;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+[data-testid="stExpander"]:hover {
+    border-color: var(--border-hover) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+[data-testid="stExpander"] summary {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    padding: 1rem !important;
+    border-radius: 12px !important;
+    background-color: var(--card-bg) !important;
+}
+
+[data-testid="stExpander"] summary:hover {
+    color: #0ea5e9 !important;
+}
+
+[data-testid="stExpander"] summary svg {
+    fill: var(--text-secondary) !important;
+    color: var(--text-secondary) !important;
+}
+
+[data-testid="stExpander"] summary:hover svg {
+    fill: #0ea5e9 !important;
+    color: #0ea5e9 !important;
+}
+
+[data-testid="stExpander"] [data-testid="stExpanderDetails"] {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg) !important;
+    padding: 16px;
+}
+
+/* -------------------------------------------------------------
+   3. CUSTOM UI ELEMENTS
+   ------------------------------------------------------------- */
+
+/* Top Banner */
+.topbar {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 32px 40px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.topbar::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+}
+
+.topbar h1, .topbar p { position: relative; z-index: 1; color: white !important; }
+.topbar h1 { margin: 0; font-size: 2.5rem; font-weight: 800; letter-spacing: -0.5px; }
+
+/* Sidebar Section Headers */
+.title-badge, .sidebar-title {
+    background: var(--primary-gradient);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    display: inline-flex; align-items: center; gap: 8px;
+}
+.sidebar-title { width: 100%; box-sizing: border-box; padding: 14px 18px; }
+
+/* File List Items */
+.file-item {
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 8px 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.file-item:hover {
+    background: var(--card-hover-bg);
+    border-color: var(--border-hover);
+    transform: translateX(4px);
+}
+
+/* KPI Stats Circles */
+.kpi {
+    width: 130px; height: 130px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--shadow-xl); margin-bottom: 16px; transition: transform 0.3s ease;
+}
+.kpi:hover { transform: scale(1.05); }
+
+.kpi-inner {
+    width: 100px; height: 100px; border-radius: 50%;
+    background: var(--darker-bg);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 2px solid var(--border-color);
+}
+
+.kpi-value { font-size: 24px; font-weight: 800; color: var(--text-primary); }
+.kpi-label { font-size: 12px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; }
+.kpi-row { display: flex; gap: 16px; margin-top: 24px; justify-content: center; flex-wrap: wrap; }
+
+/* Info Cards */
+.info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    gap: 24px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.info-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.info-item-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.info-item-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* General Text Colors */
+h1, h2, h3, h4, h5, h6, p, span, div, label { color: var(--text-primary); }
+.muted { color: var(--text-secondary) !important; font-size: 13px; font-style: italic; }
+
+/* Dashboard table header */
+.dashboard-table-header, .dashboard-table-header span, .dashboard-table-header div {
+    color: #ffffff !important;
+}
+
+/* Help card text */
+.help-card-text { color: var(--text-primary) !important; }
+.help-card-text strong { color: inherit !important; }
+
+/* Dashboard table row */
+.dashboard-table-row { color: var(--text-primary) !important; }
+.dashboard-table-row .file-name { color: #0ea5e9 !important; font-weight: 500; }
+.dashboard-table-row .fn-name { color: var(--text-primary) !important; }
+
+/* Light Mode Contrast Fixes */
+@media (prefers-color-scheme: light) {
+    h1, h2, h3, h4, h5, h6, p, span, div, label { color: #1a1f2e; }
+    
+    .topbar h1, .topbar p, 
+    .stButton button *, .stDownloadButton button *,
+    .title-badge, .sidebar-title, 
+    button[data-baseweb="tab"][aria-selected="true"] * { 
+        color: white !important; 
+    }
+    
+    .file-item { color: #1a1f2e !important; }
+    .stSelectbox div[data-baseweb="select"] span { color: #1a1f2e !important; }
+}
