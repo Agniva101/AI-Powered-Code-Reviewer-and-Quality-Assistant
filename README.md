@@ -2,7 +2,7 @@
 
 A comprehensive Python code analysis tool that leverages AI to automatically generate, validate, and improve docstrings while providing deep insights into code quality metrics.
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.24%2B-FF4B4B?logo=streamlit&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-LLM-00D4FF?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyeiIvPjwvc3ZnPg==)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -56,7 +56,7 @@ A comprehensive Python code analysis tool that leverages AI to automatically gen
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.14
 - [Groq API Key](https://console.groq.com/) (Free tier available)
 
 ### Installation
