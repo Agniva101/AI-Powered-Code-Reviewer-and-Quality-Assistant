@@ -17,7 +17,7 @@ A comprehensive Python code analysis tool that leverages AI to automatically gen
 - Identifies generators, async functions, and exception handling patterns
 
 ### 🤖 AI-Powered Docstring Generation
-- Automatic docstring generation using Groq LLM (LLaMA 3.3 70B)
+- Automatic docstring generation using Groq LLM (LLaMA 3.1 8B Instant)
 - Support for multiple docstring styles:
   - **Google Style** - Clean and readable
   - **NumPy Style** - Scientific computing standard
@@ -146,9 +146,7 @@ Python Project/
 │   ├── reporter/            # Coverage reporting
 │   │   └── coverage_reporter.py
 │   ├── dashboard/           # UI components
-│   │   └── dashboard.py     # Tab rendering & interactions
-│   └── review_engine/       # AI review capabilities
-│       └── ai_review.py
+│       └── dashboard.py     # Tab rendering & interactions
 │
 ├── tests/                   # Test suite
 │   ├── test_generator.py
