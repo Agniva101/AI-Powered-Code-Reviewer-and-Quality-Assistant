@@ -1,12 +1,14 @@
-"""Provide core mathematical and utility functions for data processing and calculation."""
+"""Provide core mathematical and utility functions for data processing."""
 import math
 def calculate_average(numbers):
     """
     Calculate the average of a list of numbers.
     
-    :param list numbers: A list of numbers to calculate the average from.
-    :returns: The average of the numbers in the list.
-    :rtype: float
+    Args:
+        numbers (list): A list of numbers to calculate the average from.
+    
+    Returns:
+        float: The average of the input numbers.
     """
     total = 0
     for n in numbers:

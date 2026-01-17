@@ -4,7 +4,7 @@ A comprehensive Python code analysis tool that leverages AI to automatically gen
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.24%2B-FF4B4B?logo=streamlit&logoColor=white)
-![Groq](https://img.shields.io/badge/Groq-LLM-00D4FF?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyeiIvPjwvc3ZnPg==)
+![Groq](https://img.shields.io/badge/Groq-API-00D4FF?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyeiIvPjwvc3ZnPg==)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
@@ -200,12 +200,28 @@ pytest --json-report --json-report-file=storage/reports/pytest_results.json
 
 ## 🛠️ Technologies Used
 
+### Core Framework
 - **[Streamlit](https://streamlit.io/)** - Web application framework
-- **[Groq](https://groq.com/)** - Ultra-fast LLM inference
-- **[LangChain](https://langchain.com/)** - LLM orchestration
-- **[pydocstyle](https://www.pydocstyle.org/)** - PEP 257 validation
+
+### AI & LLM
+- **[Groq API](https://groq.com/)** - Ultra-fast LLM inference API
+- **[LangChain](https://langchain.com/)** - LLM orchestration framework
+- **[LangChain-Groq](https://python.langchain.com/docs/integrations/chat/groq/)** - Groq integration for LangChain
+- **[LangChain-Community](https://python.langchain.com/)** - Community integrations
+
+### Code Analysis
+- **[pydocstyle](https://www.pydocstyle.org/)** - PEP 257 docstring validation
 - **[Radon](https://radon.readthedocs.io/)** - Code complexity metrics
-- **[Altair](https://altair-viz.github.io/)** - Declarative visualizations
+
+### Visualization
+- **[Altair](https://altair-viz.github.io/)** - Declarative statistical visualizations
+
+### Testing
+- **[pytest](https://pytest.org/)** - Testing framework
+- **[pytest-json-report](https://pypi.org/project/pytest-json-report/)** - JSON test report generation
+
+### Utilities
+- **[python-dotenv](https://pypi.org/project/python-dotenv/)** - Environment variable management
 
 ---
 
