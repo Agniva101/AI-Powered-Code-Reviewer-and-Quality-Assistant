@@ -17,7 +17,7 @@ A comprehensive Python code analysis tool that leverages AI to automatically gen
 - Identifies generators, async functions, and exception handling patterns
 
 ### 🤖 AI-Powered Docstring Generation
-- Automatic docstring generation using Groq LLM (LLaMA 3.1 8B Instant)
+- Automatic docstring generation using Groq API (LLaMA 3.1 8B Instant)
 - Support for multiple docstring styles:
   - **Google Style** - Clean and readable
   - **NumPy Style** - Scientific computing standard
