@@ -298,7 +298,7 @@ with left_col:
 
 # Main Panel
 with main_col:
-    tab_dashboard, tab1, tab2, tab3 = st.tabs(["🧰 Dashboard", "📜 Generated Docstrings", "📈 Coverage Report", "📊 Validator"])
+    tab_dashboard, tab1, tab2, tab3 = st.tabs(["🧰 Dashboard", "📜 Generated Docstrings", "📈 Metrics", "📊 Validator"])
 
     with tab_dashboard:
         st.markdown("#### 🧰 Dashboard")

@@ -36,7 +36,7 @@ A comprehensive Python code analysis tool that leverages AI to automatically gen
 
 ### 📊 Code Quality Metrics
 - **Cyclomatic Complexity Analysis** using Radon
-- **Docstring Coverage Reports** with visual indicators
+- **Docstring Metrics** with visual indicators
 - **Per-file and per-function breakdown**
 
 ### 🎨 Modern Dashboard UI

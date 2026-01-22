@@ -1,4 +1,4 @@
-"""Provide core mathematical and utility functions for data processing."""
+"""Provide core utility functions and classes for mathematical calculations and data processing."""
 import math
 def calculate_average(numbers):
     """
@@ -8,7 +8,7 @@ def calculate_average(numbers):
         numbers (list): A list of numbers to calculate the average from.
     
     Returns:
-        float: The average of the input numbers.
+        float: The average of the numbers in the list. If the list is empty, returns 0.
     """
     total = 0
     for n in numbers:

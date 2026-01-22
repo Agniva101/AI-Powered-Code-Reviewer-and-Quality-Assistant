@@ -618,7 +618,7 @@ def render_help_tips_tab():
         1. **Scan entire projects**: Point to a folder to analyze all Python files recursively
         2. **Use Fix All**: Quickly resolve bulk PEP 257 violations in one go
         3. **Review before applying**: Always preview generated docstrings before applying
-        4. **Check Coverage Report**: Monitor your project's documentation coverage over time
+        4. **Check Metrics**: Monitor your project's documentation coverage over time
         5. **Validate with PEP257**: The Validator tab shows PEP257 compliance issues
         6. **Run tests regularly**: Use the Tests tab to ensure code quality
         ''')
